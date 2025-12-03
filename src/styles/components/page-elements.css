@@ -262,6 +262,39 @@
     box-shadow: var(--shadow-glow);
 }
 
+/* ===== GALERIE AVEC LÉGENDES ===== */
+.gallery-with-captions {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+    margin: var(--spacing-lg) 0;
+}
+
+.gallery-item {
+    position: relative;
+    background: var(--bg-card);
+    border: 1px solid var(--bg-tertiary);
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.gallery-item-caption {
+    padding: var(--spacing-md);
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    text-align: center;
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--bg-tertiary);
+}
+
 /* ===== TEXTE UTILITAIRE ===== */
 .text-center { text-align: center; }
 .text-left { text-align: left; }

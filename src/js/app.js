@@ -54,6 +54,9 @@ const App = {
         
         // Tree renderer
         TreeRenderer.init('nav-tree');
+        
+        // Lightbox pour les galeries
+        Lightbox.init();
     },
 
     /**

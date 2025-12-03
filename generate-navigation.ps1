@@ -59,13 +59,14 @@ function Get-NavigationTree {
     
     [System.Collections.ArrayList]$items = @()
     
+    # Tri: fichiers d'abord (index.html en premier), puis dossiers
     $children = Get-ChildItem -Path $Path -ErrorAction SilentlyContinue | Sort-Object { 
         $isDir = $_.PSIsContainer
         $isIndex = $_.Name -eq "index.html"
         
-        if ($isDir) { "0" + $_.Name }
-        elseif ($isIndex) { "1" }
-        else { "2" + $_.Name }
+        if ($isIndex) { "0" }                # index.html en tout premier
+        elseif (-not $isDir) { "1" + $_.Name } # Fichiers ensuite
+        else { "2" + $_.Name }                # Dossiers en dernier
     }
     
     foreach ($child in $children) {
