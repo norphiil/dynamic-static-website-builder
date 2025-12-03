@@ -36,10 +36,18 @@
 }
 
 .sidebar-header {
+    display: block;
     padding: var(--spacing-lg);
     text-align: center;
     border-bottom: 1px solid var(--bg-tertiary);
     background: var(--bg-primary);
+    text-decoration: none;
+    transition: background 0.2s ease;
+    cursor: pointer;
+}
+
+.sidebar-header:hover {
+    background: var(--bg-secondary);
 }
 
 .sidebar-header .logo {

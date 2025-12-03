@@ -21,17 +21,18 @@
     <link rel="stylesheet" href="src/styles/components/theme-switcher.css">
     <link rel="stylesheet" href="src/styles/theme/colors.css">
     <link rel="stylesheet" href="src/styles/theme/animations.css">
+    <link rel="stylesheet" href="src/styles/pages/home.css">
 </head>
 <body>
     <div class="app-container">
         <!-- Sidebar Navigation -->
         <aside class="sidebar" id="sidebar">
-            <div class="sidebar-header">
+            <a href="#" class="sidebar-header" id="home-link">
                 <img src="src/assets/images/icone/FrWA_Conception.png" alt="FrWA Conception" class="logo logo-light">
                 <img src="src/assets/images/icone/FrWA_Conception_grey.png" alt="FrWA Conception" class="logo logo-dark">
                 <h1 class="site-title">FrWA</h1>
                 <span class="site-subtitle">Conception</span>
-            </div>
+            </a>
             <nav class="nav-tree" id="nav-tree">
                 <!-- Navigation générée automatiquement -->
             </nav>
@@ -81,27 +82,134 @@
                 </div>
             </header>
             <article class="content-body" id="content-body">
-                <div class="welcome-section">
-                    <h1>Bienvenue sur FrWA Conception</h1>
-                    <p class="lead">Explorez notre documentation et nos projets via le menu latéral.</p>
-                    
-                    <div class="feature-grid">
-                        <div class="feature-card">
-                            <div class="card-icon">❄️</div>
-                            <h3>Navigation Automatique</h3>
-                            <p>Le menu se construit automatiquement selon l'arborescence des dossiers.</p>
-                        </div>
-                        <div class="feature-card">
-                            <div class="card-icon">🤖</div>
-                            <h3>Simple à Utiliser</h3>
-                            <p>Ajoutez simplement des fichiers HTML dans le dossier pages/</p>
-                        </div>
-                        <div class="feature-card">
-                            <div class="card-icon">⚡</div>
-                            <h3>GitHub Pages Ready</h3>
-                            <p>Fonctionne directement sur GitHub Pages sans configuration.</p>
+                <div class="page-content home-page">
+                    <!-- Bannière d'accueil -->
+                    <div class="home-banner">
+                        <img src="src/assets/images/accueil/Banniere.jpg" alt="Bannière FrWA Conception">
+                        <div class="home-banner-overlay">
+                            <img src="src/assets/images/logo/FrWA_Conception_grey.png" alt="FrWA Conception" class="home-banner-logo">
+                            <h1 class="home-banner-title">FrWA Conception</h1>
                         </div>
                     </div>
+
+                    <!-- Section Bienvenue -->
+                    <section class="home-welcome">
+                        <div class="home-mascot">
+                            <img src="src/assets/images/gif/M.Multimetre.gif" alt="M. Multimètre - Mascotte">
+                        </div>
+
+                        <div class="divider"></div>
+
+                        <div class="home-intro">
+                            <p class="lead">Salutation à toutes et à tous,</p>
+                            <p>
+                                Soyez les bienvenus, <strong>M. Multimètre</strong> sera votre guide tout au long 
+                                de votre voyage sur mon site.
+                            </p>
+                        </div>
+
+                        <div class="divider"></div>
+                    </section>
+
+                    <!-- Navigation visuelle par sections -->
+                    <section class="home-sections">
+                        <h2 class="section-title">Explorer les sections</h2>
+                        
+                        <div class="sections-grid">
+                            <a href="#pages/electronique/Electronique.html" class="section-card">
+                                <div class="section-card-image">
+                                    <img src="src/assets/images/accueil/Electronique.jpg" alt="Électronique">
+                                </div>
+                                <div class="section-card-content">
+                                    <h3>Électronique</h3>
+                                    <p>Circuits, composants et montages électroniques</p>
+                                </div>
+                            </a>
+
+                            <a href="#pages/mecanique/Mecanique.html" class="section-card">
+                                <div class="section-card-image">
+                                    <img src="src/assets/images/accueil/Mecanique.jpg" alt="Mécanique">
+                                </div>
+                                <div class="section-card-content">
+                                    <h3>Mécanique</h3>
+                                    <p>Conception mécanique et modélisation 3D</p>
+                                </div>
+                            </a>
+
+                            <a href="#pages/code/Code.html" class="section-card">
+                                <div class="section-card-image">
+                                    <img src="src/assets/images/accueil/Code.jpg" alt="Code">
+                                </div>
+                                <div class="section-card-content">
+                                    <h3>Code</h3>
+                                    <p>Programmation et développement logiciel</p>
+                                </div>
+                            </a>
+
+                            <a href="#pages/projets/Projets.html" class="section-card">
+                                <div class="section-card-image">
+                                    <img src="src/assets/images/accueil/Projets.jpg" alt="Projets">
+                                </div>
+                                <div class="section-card-content">
+                                    <h3>Projets</h3>
+                                    <p>Réalisations complètes et expérimentations</p>
+                                </div>
+                            </a>
+
+                            <a href="#pages/cours/Cours.html" class="section-card">
+                                <div class="section-card-image">
+                                    <img src="src/assets/images/accueil/Cours.jpg" alt="Cours">
+                                </div>
+                                <div class="section-card-content">
+                                    <h3>Cours</h3>
+                                    <p>Tutoriels et ressources pédagogiques</p>
+                                </div>
+                            </a>
+                        </div>
+                    </section>
+
+                    <!-- Section Vlog / Mises à jour -->
+                    <section class="home-updates">
+                        <h2 class="section-title">Dernières mises à jour</h2>
+                        
+                        <div class="updates-list">
+                            <div class="update-item">
+                                <div class="update-date">
+                                    <span class="update-day">03</span>
+                                    <span class="update-month">Déc</span>
+                                    <span class="update-year">2024</span>
+                                </div>
+                                <div class="update-content">
+                                    <h4>Nouveau site en ligne !</h4>
+                                    <p>Refonte complète du site avec un nouveau design moderne et une navigation améliorée. Ajout du système de thèmes (sombre, clair, cyan).</p>
+                                </div>
+                            </div>
+
+                            <div class="update-item">
+                                <div class="update-date">
+                                    <span class="update-day">01</span>
+                                    <span class="update-month">Déc</span>
+                                    <span class="update-year">2024</span>
+                                </div>
+                                <div class="update-content">
+                                    <h4>Projet Plantation Autonome</h4>
+                                    <p>Documentation complète du projet de plantation autonome avec photos, vidéos et modèle 3D interactif.</p>
+                                </div>
+                            </div>
+
+                            <div class="update-item">
+                                <div class="update-date">
+                                    <span class="update-day">--</span>
+                                    <span class="update-month">---</span>
+                                    <span class="update-year">----</span>
+                                </div>
+                                <div class="update-content">
+                                    <h4>Plus de mises à jour à venir...</h4>
+                                    <p>Restez connectés pour découvrir les prochains projets et tutoriels !</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
                 </div>
             </article>
             <footer class="content-footer">
