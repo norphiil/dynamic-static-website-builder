@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajouter des Pages - FrWA Conception</title>
+</head>
+<body>
+    <div class="page-content">
+        <h1>➕ Ajouter des Pages</h1>
+        
+        <p class="lead">
+            Guide étape par étape pour créer et ajouter de nouvelles pages à votre site.
+        </p>
+
+        <h2>Étape 1 : Créer le fichier HTML</h2>
+
+        <p>Créez un nouveau fichier <code>.html</code> dans le dossier <code>pages/</code>.</p>
+
+        <h3>Template de base</h3>
+
+        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="fr"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Ma Nouvelle Page - FrWA&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class="page-content"&gt;
+        &lt;h1&gt;Titre de ma page&lt;/h1&gt;
+        
+        &lt;p class="lead"&gt;
+            Description courte de la page.
+        &lt;/p&gt;
+
+        &lt;h2&gt;Section 1&lt;/h2&gt;
+        &lt;p&gt;Contenu de la section...&lt;/p&gt;
+
+        &lt;h2&gt;Section 2&lt;/h2&gt;
+        &lt;p&gt;Autre contenu...&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+        <div class="card-alert info">
+            <div class="card-body">
+                <strong>💡 Note :</strong> Seul le contenu dans <code>&lt;div class="page-content"&gt;</code> 
+                sera affiché. Les balises <code>&lt;head&gt;</code> et autres sont ignorées lors du chargement.
+            </div>
+        </div>
+
+        <h2>Étape 2 : Organiser en dossiers (optionnel)</h2>
+
+        <p>Pour créer une hiérarchie, utilisez des sous-dossiers :</p>
+
+        <pre><code>pages/
+└── mon-projet/
+    ├── index.html          # Page principale du projet
+    ├── installation.html   # Sous-page
+    ├── configuration.html  # Autre sous-page
+    └── assets/             # Images du projet
+        ├── logo.png
+        └── screenshot.jpg</code></pre>
+
+        <h2>Étape 3 : Ajouter au menu</h2>
+
+        <p>Éditez le fichier <code>navigation.json</code> à la racine :</p>
+
+        <pre><code>{
+    "children": [
+        // ... autres entrées ...
+        {
+            "name": "ma-nouvelle-page",
+            "displayName": "Ma Nouvelle Page",
+            "path": "pages/ma-nouvelle-page.html",
+            "icon": "✨",
+            "type": "file"
+        }
+    ]
+}</code></pre>
+
+        <h3>Pour un dossier avec sous-pages :</h3>
+
+        <pre><code>{
+    "name": "mon-projet",
+    "displayName": "Mon Projet",
+    "path": "pages/mon-projet",
+    "icon": "📦",
+    "type": "folder",
+    "children": [
+        {
+            "name": "index",
+            "displayName": "Présentation",
+            "path": "pages/mon-projet/index.html",
+            "type": "file"
+        },
+        {
+            "name": "installation",
+            "displayName": "Installation",
+            "path": "pages/mon-projet/installation.html",
+            "type": "file"
+        }
+    ]
+}</code></pre>
+
+        <h2>Étape 4 : Ajouter des images</h2>
+
+        <p>Placez vos images dans un dossier <code>assets/</code> à côté de votre page :</p>
+
+        <pre><code>&lt;img src="assets/mon-image.png" alt="Description"&gt;</code></pre>
+
+        <p>Le système corrigera automatiquement les chemins relatifs.</p>
+
+        <h2>Classes CSS disponibles</h2>
+
+        <p>Utilisez ces classes pour styliser votre contenu :</p>
+
+        <div class="grid grid-2">
+            <div>
+                <h4>Texte</h4>
+                <ul>
+                    <li><code>.lead</code> - Paragraphe d'introduction</li>
+                    <li><code>.text-accent</code> - Texte coloré</li>
+                    <li><code>.text-muted</code> - Texte grisé</li>
+                    <li><code>.text-center</code> - Texte centré</li>
+                </ul>
+            </div>
+            <div>
+                <h4>Composants</h4>
+                <ul>
+                    <li><code>.card</code> - Carte</li>
+                    <li><code>.btn</code> - Bouton</li>
+                    <li><code>.card-alert</code> - Alerte</li>
+                    <li><code>.feature-grid</code> - Grille</li>
+                </ul>
+            </div>
+        </div>
+
+        <h3>Exemple d'alerte</h3>
+
+        <pre><code>&lt;div class="card-alert success"&gt;
+    &lt;div class="card-body"&gt;
+        &lt;strong&gt;✅ Succès !&lt;/strong&gt; Message de succès.
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+        <p>Types disponibles : <code>info</code>, <code>success</code>, <code>warning</code>, <code>error</code></p>
+
+        <div class="card-alert success">
+            <div class="card-body">
+                <strong>✅ Succès !</strong> Exemple de message de succès.
+            </div>
+        </div>
+
+        <div class="card-alert warning">
+            <div class="card-body">
+                <strong>⚠️ Attention !</strong> Exemple d'avertissement.
+            </div>
+        </div>
+
+        <div class="card-alert error">
+            <div class="card-body">
+                <strong>❌ Erreur !</strong> Exemple de message d'erreur.
+            </div>
+        </div>
+    </div>
+</body>
+</html>

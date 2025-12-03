@@ -20,7 +20,7 @@ $PagesDir = Join-Path $ScriptDir "pages"
 $OutputFile = Join-Path $ScriptDir "navigation.json"
 
 # Dossiers/fichiers a ignorer
-$ExcludePatterns = @("assets", "images", "img", "css", "js", "_*", ".*")
+$ExcludePatterns = @("assets", "images", "img", "css", "js", "template", "_*", ".*")
 
 # Fonction pour convertir un nom de fichier en titre lisible
 function ConvertTo-DisplayName {

@@ -1,42 +1,58 @@
 ﻿{
-    "generated":  "2025-12-03 11:17:07",
+    "generated":  "2025-12-03 13:00:40",
     "children":  [
                      {
-                         "name":  "accueil",
-                         "displayName":  "Accueil",
-                         "path":  "pages/accueil",
+                         "name":  "code",
+                         "displayName":  "Code",
+                         "path":  "pages/code",
                          "type":  "folder",
                          "children":  [
                                           {
-                                              "name":  "index.html",
-                                              "displayName":  "Index",
-                                              "path":  "pages/accueil/index.html",
+                                              "name":  "Code.html",
+                                              "displayName":  "Code",
+                                              "path":  "pages/code/Code.html",
                                               "type":  "file"
                                           }
                                       ]
                      },
                      {
-                         "name":  "documentation",
-                         "displayName":  "Documentation",
-                         "path":  "pages/documentation",
+                         "name":  "cours",
+                         "displayName":  "Cours",
+                         "path":  "pages/cours",
                          "type":  "folder",
                          "children":  [
                                           {
-                                              "name":  "ajouter-pages.html",
-                                              "displayName":  "Ajouter Pages",
-                                              "path":  "pages/documentation/ajouter-pages.html",
+                                              "name":  "Cours.html",
+                                              "displayName":  "Cours",
+                                              "path":  "pages/cours/Cours.html",
                                               "type":  "file"
-                                          },
+                                          }
+                                      ]
+                     },
+                     {
+                         "name":  "electronique",
+                         "displayName":  "Electronique",
+                         "path":  "pages/electronique",
+                         "type":  "folder",
+                         "children":  [
                                           {
-                                              "name":  "demarrage.html",
-                                              "displayName":  "Demarrage",
-                                              "path":  "pages/documentation/demarrage.html",
+                                              "name":  "Electronique.html",
+                                              "displayName":  "Electronique",
+                                              "path":  "pages/electronique/Electronique.html",
                                               "type":  "file"
-                                          },
+                                          }
+                                      ]
+                     },
+                     {
+                         "name":  "mecanique",
+                         "displayName":  "Mecanique",
+                         "path":  "pages/mecanique",
+                         "type":  "folder",
+                         "children":  [
                                           {
-                                              "name":  "structure.html",
-                                              "displayName":  "Structure",
-                                              "path":  "pages/documentation/structure.html",
+                                              "name":  "Mecanique.html",
+                                              "displayName":  "Mecanique",
+                                              "path":  "pages/mecanique/Mecanique.html",
                                               "type":  "file"
                                           }
                                       ]
@@ -48,32 +64,26 @@
                          "type":  "folder",
                          "children":  [
                                           {
-                                              "name":  "projet-exemple",
-                                              "displayName":  "Projet Exemple",
-                                              "path":  "pages/projets/projet-exemple",
+                                              "name":  "plantation_autonome",
+                                              "displayName":  "Plantation Autonome",
+                                              "path":  "pages/projets/plantation_autonome",
                                               "type":  "folder",
                                               "children":  [
                                                                {
-                                                                   "name":  "index.html",
-                                                                   "displayName":  "Index",
-                                                                   "path":  "pages/projets/projet-exemple/index.html",
-                                                                   "type":  "file"
-                                                               },
-                                                               {
-                                                                   "name":  "details.html",
-                                                                   "displayName":  "Details",
-                                                                   "path":  "pages/projets/projet-exemple/details.html",
+                                                                   "name":  "Plantation_autonome.html",
+                                                                   "displayName":  "Plantation Autonome",
+                                                                   "path":  "pages/projets/plantation_autonome/Plantation_autonome.html",
                                                                    "type":  "file"
                                                                }
                                                            ]
+                                          },
+                                          {
+                                              "name":  "Projets.html",
+                                              "displayName":  "Projets",
+                                              "path":  "pages/projets/Projets.html",
+                                              "type":  "file"
                                           }
                                       ]
-                     },
-                     {
-                         "name":  "a-propos.html",
-                         "displayName":  "A Propos",
-                         "path":  "pages/a-propos.html",
-                         "type":  "file"
                      }
                  ]
 }

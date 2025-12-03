@@ -1,6 +1,6 @@
 /**
  * Theme Manager
- * Gestion du thème (optionnel pour futur dark/light mode)
+ * Gestion des thèmes (sombre/clair/cyan)
  */
 
 const ThemeManager = {
@@ -10,9 +10,22 @@ const ThemeManager = {
     currentTheme: 'dark',
 
     /**
-     * Thèmes disponibles
+     * Thèmes disponibles avec leurs labels
      */
-    themes: ['dark', 'light'],
+    themes: {
+        dark: 'Sombre',
+        light: 'Clair',
+        cyan: 'Cyan'
+    },
+
+    /**
+     * Éléments DOM
+     */
+    elements: {
+        button: null,
+        dropdown: null,
+        options: null
+    },
 
     /**
      * Initialise le theme manager
@@ -23,22 +36,98 @@ const ThemeManager = {
         
         // Applique le thème
         this.applyTheme(this.currentTheme);
+        
+        // Initialise les éléments du dropdown
+        this.initDropdown();
     },
 
     /**
-     * Change de thème
+     * Initialise le dropdown de thème
+     */
+    initDropdown() {
+        this.elements.button = document.querySelector('.theme-btn');
+        this.elements.dropdown = document.querySelector('.theme-dropdown');
+        this.elements.options = document.querySelectorAll('.theme-option');
+
+        if (!this.elements.button || !this.elements.dropdown) {
+            return;
+        }
+
+        // Toggle du dropdown au clic sur le bouton
+        this.elements.button.addEventListener('click', (e) => {
+            e.stopPropagation();
+            this.toggleDropdown();
+        });
+
+        // Sélection d'un thème
+        this.elements.options.forEach(option => {
+            option.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const theme = option.dataset.theme;
+                this.setTheme(theme);
+                this.closeDropdown();
+            });
+        });
+
+        // Ferme le dropdown au clic ailleurs
+        document.addEventListener('click', () => {
+            this.closeDropdown();
+        });
+
+        // Ferme le dropdown avec Escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                this.closeDropdown();
+            }
+        });
+
+        // Met à jour l'état actif
+        this.updateActiveOption();
+    },
+
+    /**
+     * Ouvre/ferme le dropdown
+     */
+    toggleDropdown() {
+        if (this.elements.dropdown) {
+            this.elements.dropdown.classList.toggle('active');
+        }
+    },
+
+    /**
+     * Ferme le dropdown
+     */
+    closeDropdown() {
+        if (this.elements.dropdown) {
+            this.elements.dropdown.classList.remove('active');
+        }
+    },
+
+    /**
+     * Met à jour l'option active dans le dropdown
+     */
+    updateActiveOption() {
+        this.elements.options.forEach(option => {
+            const isActive = option.dataset.theme === this.currentTheme;
+            option.classList.toggle('active', isActive);
+        });
+    },
+
+    /**
+     * Cycle entre les thèmes
      */
     toggle() {
-        const currentIndex = this.themes.indexOf(this.currentTheme);
-        const nextIndex = (currentIndex + 1) % this.themes.length;
-        this.setTheme(this.themes[nextIndex]);
+        const themeKeys = Object.keys(this.themes);
+        const currentIndex = themeKeys.indexOf(this.currentTheme);
+        const nextIndex = (currentIndex + 1) % themeKeys.length;
+        this.setTheme(themeKeys[nextIndex]);
     },
 
     /**
      * Définit un thème
      */
     setTheme(theme) {
-        if (!this.themes.includes(theme)) {
+        if (!this.themes[theme]) {
             console.warn('Unknown theme:', theme);
             return;
         }
@@ -46,6 +135,7 @@ const ThemeManager = {
         this.currentTheme = theme;
         this.applyTheme(theme);
         this.saveTheme(theme);
+        this.updateActiveOption();
     },
 
     /**
@@ -78,27 +168,17 @@ const ThemeManager = {
     loadTheme() {
         try {
             const saved = localStorage.getItem(SiteConfig.storageKeys.theme);
-            if (saved && this.themes.includes(saved)) {
+            if (saved && this.themes[saved]) {
                 this.currentTheme = saved;
             }
         } catch (e) {
             // Use default theme
         }
         
-        // Vérifie la préférence système
-        if (window.matchMedia) {
+        // Vérifie la préférence système seulement si pas de thème sauvegardé
+        if (window.matchMedia && !localStorage.getItem(SiteConfig.storageKeys.theme)) {
             const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
-            
-            if (!localStorage.getItem(SiteConfig.storageKeys.theme)) {
-                this.currentTheme = prefersDark.matches ? 'dark' : 'light';
-            }
-            
-            // Écoute les changements de préférence
-            prefersDark.addEventListener('change', (e) => {
-                if (!localStorage.getItem(SiteConfig.storageKeys.theme)) {
-                    this.setTheme(e.matches ? 'dark' : 'light');
-                }
-            });
+            this.currentTheme = prefersDark.matches ? 'dark' : 'light';
         }
     },
 
@@ -110,10 +190,17 @@ const ThemeManager = {
     },
 
     /**
+     * Obtient le label du thème actuel
+     */
+    getThemeLabel() {
+        return this.themes[this.currentTheme] || 'Sombre';
+    },
+
+    /**
      * Vérifie si le thème est dark
      */
     isDark() {
-        return this.currentTheme === 'dark';
+        return this.currentTheme === 'dark' || this.currentTheme === 'cyan';
     }
 };
 

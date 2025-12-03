@@ -49,6 +49,23 @@
     filter: drop-shadow(0 0 10px rgba(78, 205, 196, 0.3));
 }
 
+/* Logo dynamique selon le thème */
+.sidebar-header .logo-light {
+    display: none;
+}
+
+.sidebar-header .logo-dark {
+    display: block;
+}
+
+[data-theme="light"] .sidebar-header .logo-light {
+    display: block;
+}
+
+[data-theme="light"] .sidebar-header .logo-dark {
+    display: none;
+}
+
 .site-title {
     font-size: var(--font-size-xl);
     font-weight: 700;
@@ -79,6 +96,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: var(--spacing-sm);
 }
 
 .mascot {
@@ -92,6 +110,42 @@
 .mascot:hover {
     opacity: 1;
     transform: scale(1.1);
+}
+
+/* Liens réseaux sociaux */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+    padding-top: var(--spacing-sm);
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: var(--border-radius-sm);
+    background: var(--bg-tertiary);
+    transition: all var(--transition-fast);
+}
+
+.social-links a:hover {
+    background: var(--color-primary);
+    transform: translateY(-2px);
+}
+
+.social-links img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    filter: brightness(0.9);
+    transition: filter var(--transition-fast);
+}
+
+.social-links a:hover img {
+    filter: brightness(1.2);
 }
 
 /* Toggle button */

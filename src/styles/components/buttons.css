@@ -25,12 +25,13 @@
 /* Bouton primaire */
 .btn-primary {
     background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
-    color: var(--text-primary);
+    color: #ffffff;
     border-color: var(--color-primary);
 }
 
 .btn-primary:hover:not(:disabled) {
     background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary) 100%);
+    color: #ffffff;
     transform: translateY(-2px);
     box-shadow: var(--shadow-md);
 }
@@ -121,4 +122,16 @@
 
 .btn-group .btn:not(:last-child) {
     border-right: none;
+}
+
+/* Thème clair - ajustements boutons */
+[data-theme="light"] .btn-primary {
+    background: linear-gradient(135deg, #daf1f3 0%, #e1ffff 100%);
+    color: #1a2424;
+    border-color: var(--color-primary);
+}
+
+[data-theme="light"] .btn-primary:hover:not(:disabled) {
+    background: linear-gradient(135deg, #c5e8eb 0%, #d0f5f5 100%);
+    color: #1a2424;
 }
