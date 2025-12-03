@@ -1,0 +1,75 @@
+﻿{
+    "generated":  "2025-12-03 11:01:43",
+    "children":  [
+                     {
+                         "path":  "pages/accueil",
+                         "name":  "accueil",
+                         "children":  {
+                                          "path":  "pages/accueil/index.html",
+                                          "name":  "index.html",
+                                          "displayName":  "Index",
+                                          "type":  "file"
+                                      },
+                         "displayName":  "Accueil",
+                         "type":  "folder"
+                     },
+                     {
+                         "path":  "pages/documentation",
+                         "name":  "documentation",
+                         "children":  [
+                                          {
+                                              "path":  "pages/documentation/ajouter-pages.html",
+                                              "name":  "ajouter-pages.html",
+                                              "displayName":  "Ajouter Pages",
+                                              "type":  "file"
+                                          },
+                                          {
+                                              "path":  "pages/documentation/demarrage.html",
+                                              "name":  "demarrage.html",
+                                              "displayName":  "Demarrage",
+                                              "type":  "file"
+                                          },
+                                          {
+                                              "path":  "pages/documentation/structure.html",
+                                              "name":  "structure.html",
+                                              "displayName":  "Structure",
+                                              "type":  "file"
+                                          }
+                                      ],
+                         "displayName":  "Documentation",
+                         "type":  "folder"
+                     },
+                     {
+                         "path":  "pages/projets",
+                         "name":  "projets",
+                         "children":  {
+                                          "path":  "pages/projets/projet-exemple",
+                                          "name":  "projet-exemple",
+                                          "children":  [
+                                                           {
+                                                               "path":  "pages/projets/projet-exemple/index.html",
+                                                               "name":  "index.html",
+                                                               "displayName":  "Index",
+                                                               "type":  "file"
+                                                           },
+                                                           {
+                                                               "path":  "pages/projets/projet-exemple/details.html",
+                                                               "name":  "details.html",
+                                                               "displayName":  "Details",
+                                                               "type":  "file"
+                                                           }
+                                                       ],
+                                          "displayName":  "Projet Exemple",
+                                          "type":  "folder"
+                                      },
+                         "displayName":  "Projets",
+                         "type":  "folder"
+                     },
+                     {
+                         "path":  "pages/a-propos.html",
+                         "name":  "a-propos.html",
+                         "displayName":  "A Propos",
+                         "type":  "file"
+                     }
+                 ]
+}

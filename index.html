@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FrWA Conception</title>
+    
+    <!-- Styles modulaires -->
+    <link rel="stylesheet" href="src/styles/base/variables.css">
+    <link rel="stylesheet" href="src/styles/base/reset.css">
+    <link rel="stylesheet" href="src/styles/base/typography.css">
+    <link rel="stylesheet" href="src/styles/layout/grid.css">
+    <link rel="stylesheet" href="src/styles/layout/sidebar.css">
+    <link rel="stylesheet" href="src/styles/layout/content.css">
+    <link rel="stylesheet" href="src/styles/components/navigation.css">
+    <link rel="stylesheet" href="src/styles/components/buttons.css">
+    <link rel="stylesheet" href="src/styles/components/cards.css">
+    <link rel="stylesheet" href="src/styles/theme/colors.css">
+    <link rel="stylesheet" href="src/styles/theme/animations.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <img src="src/assets/images/logo.png" alt="FrWA Conception" class="logo">
+                <h1 class="site-title">FrWA</h1>
+                <span class="site-subtitle">Conception</span>
+            </div>
+            <nav class="nav-tree" id="nav-tree">
+                <!-- Navigation générée automatiquement -->
+            </nav>
+            <div class="sidebar-footer">
+                <div class="mascot-container">
+                    <img src="src/assets/images/mascot.png" alt="Mascotte" class="mascot">
+                </div>
+            </div>
+        </aside>
+
+        <!-- Toggle button for mobile -->
+        <button class="sidebar-toggle" id="sidebar-toggle">
+            <span class="toggle-icon"></span>
+        </button>
+
+        <!-- Main Content -->
+        <main class="main-content" id="main-content">
+            <header class="content-header">
+                <div class="breadcrumb" id="breadcrumb"></div>
+            </header>
+            <article class="content-body" id="content-body">
+                <div class="welcome-section">
+                    <h1>Bienvenue sur FrWA Conception</h1>
+                    <p class="lead">Explorez notre documentation et nos projets via le menu latéral.</p>
+                    
+                    <div class="feature-grid">
+                        <div class="feature-card">
+                            <div class="card-icon">❄️</div>
+                            <h3>Navigation Automatique</h3>
+                            <p>Le menu se construit automatiquement selon l'arborescence des dossiers.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="card-icon">🤖</div>
+                            <h3>Simple à Utiliser</h3>
+                            <p>Ajoutez simplement des fichiers HTML dans le dossier pages/</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="card-icon">⚡</div>
+                            <h3>GitHub Pages Ready</h3>
+                            <p>Fonctionne directement sur GitHub Pages sans configuration.</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </main>
+    </div>
+
+    <!-- Scripts modulaires -->
+    <script src="src/js/config/site-config.js"></script>
+    <script src="src/js/config/navigation-data.js"></script>
+    <script src="src/js/utils/dom-helpers.js"></script>
+    <script src="src/js/utils/path-utils.js"></script>
+    <script src="src/js/navigation/tree-builder.js"></script>
+    <script src="src/js/navigation/tree-renderer.js"></script>
+    <script src="src/js/navigation/breadcrumb.js"></script>
+    <script src="src/js/core/content-loader.js"></script>
+    <script src="src/js/core/router.js"></script>
+    <script src="src/js/ui/sidebar-toggle.js"></script>
+    <script src="src/js/ui/theme-manager.js"></script>
+    <script src="src/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+/**
+ * Variables CSS - Palette de couleurs et dimensions
+ * Inspiré du style ingénieur/tech avec les couleurs du logo et de la mascotte
+ */
+
+:root {
+    /* Couleurs principales - Inspirées du logo et mascotte */
+    --color-primary: #2d5a5a;       /* Vert-bleu foncé (mascotte) */
+    --color-primary-light: #3d7a7a;
+    --color-primary-dark: #1d4a4a;
+    
+    --color-secondary: #a8b5b5;     /* Gris argenté (logo) */
+    --color-secondary-light: #c8d5d5;
+    --color-secondary-dark: #889595;
+    
+    --color-accent: #e67e22;        /* Orange (chapeau mascotte) */
+    --color-accent-light: #f39c12;
+    --color-accent-dark: #d35400;
+    
+    /* Couleurs de fond */
+    --bg-primary: #0a0f0f;          /* Fond sombre tech */
+    --bg-secondary: #121a1a;
+    --bg-tertiary: #1a2424;
+    --bg-card: #1e2a2a;
+    
+    /* Couleurs de texte */
+    --text-primary: #e8f0f0;
+    --text-secondary: #a8b5b5;
+    --text-muted: #6a7a7a;
+    --text-accent: #4ecdc4;         /* Cyan tech */
+    
+    /* Couleurs d'état */
+    --color-success: #27ae60;
+    --color-warning: #f39c12;
+    --color-error: #e74c3c;
+    --color-info: #3498db;
+    
+    /* Dimensions */
+    --sidebar-width: 280px;
+    --sidebar-collapsed-width: 60px;
+    --header-height: 60px;
+    --content-max-width: 1200px;
+    
+    /* Espacements */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+    --spacing-2xl: 48px;
+    
+    /* Bordures */
+    --border-radius-sm: 4px;
+    --border-radius-md: 8px;
+    --border-radius-lg: 12px;
+    --border-radius-xl: 16px;
+    
+    /* Ombres */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.5);
+    --shadow-glow: 0 0 20px rgba(78, 205, 196, 0.3);
+    
+    /* Transitions */
+    --transition-fast: 150ms ease;
+    --transition-normal: 250ms ease;
+    --transition-slow: 400ms ease;
+    
+    /* Fonts */
+    --font-family-primary: 'Segoe UI', 'Roboto', sans-serif;
+    --font-family-mono: 'Fira Code', 'Consolas', monospace;
+    
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-md: 1rem;
+    --font-size-lg: 1.25rem;
+    --font-size-xl: 1.5rem;
+    --font-size-2xl: 2rem;
+    --font-size-3xl: 2.5rem;
+    
+    /* Z-index layers */
+    --z-sidebar: 100;
+    --z-header: 90;
+    --z-modal: 200;
+    --z-tooltip: 150;
+}
