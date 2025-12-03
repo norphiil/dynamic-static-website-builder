@@ -33,12 +33,31 @@
 
 /* Thème clair - bouton plus visible */
 [data-theme="light"] .theme-btn {
-    background: #ffffff;
+    background: #fdfcfa;
     border-color: var(--color-primary);
+    color: var(--text-primary);
 }
 
 [data-theme="light"] .theme-btn:hover {
-    background: #e8ecec;
+    background: #ece9e4;
+}
+
+[data-theme="light"] .theme-dropdown {
+    background: #fdfcfa;
+    border-color: #ece9e4;
+}
+
+[data-theme="light"] .theme-option {
+    color: var(--text-primary);
+}
+
+[data-theme="light"] .theme-option:hover {
+    background: #ece9e4;
+}
+
+[data-theme="light"] .theme-option.active {
+    background: var(--color-primary);
+    color: #ffffff;
 }
 
 .theme-icon {

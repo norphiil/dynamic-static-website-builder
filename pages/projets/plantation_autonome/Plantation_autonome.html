@@ -8,139 +8,229 @@
     <div class="page-content">
         <!-- Bannière du projet -->
         <div class="page-banner">
-            <img src="pages/projets/plantation_autonome/assets/images/basilicV4.jpg" alt="Plantation Autonome">
+            <img src="src/assets/images/accueil/Banniere.jpg" alt="FrWA Conception">
             <div class="page-banner-overlay">
                 <h1 class="page-banner-title">Plantation Autonome</h1>
-                <span class="page-banner-subtitle">Système de culture automatisé</span>
             </div>
         </div>
 
-        <!-- Informations du projet -->
-        <div class="card">
-            <div class="card-header">
-                <h4 class="card-title">Informations du projet</h4>
+        <!-- Présentation du projet -->
+        <h2>Présentation du projet</h2>
+        <p class="lead">
+            Projet de plantation autonome pilotant l'arrosage, la lumière et la surveillance de l'environnement 
+            (température/humidité air, humidité du sol, niveaux, horaire).
+        </p>
+
+        <!-- Mascotte du projet -->
+        <div class="text-center" style="margin: var(--spacing-xl) 0;">
+            <img src="pages/projets/plantation_autonome/assets/images/M.Multimetre/M.MULTIMETRE_arrose_une_plante.png" alt="M. Multimètre arrose une plante" style="max-width: 300px; height: auto;">
+        </div>
+
+        <!-- Liste des paramètres -->
+        <h2>Liste des paramètres</h2>
+        <p>
+            Seuils de luminosité, hygrométrie du sol, humidité/température de l'air, créneaux horaires, 
+            niveau du réservoir, etc.
+        </p>
+
+        <div class="divider"></div>
+
+        <!-- Choix des capteurs -->
+        <h2>Choix des capteurs</h2>
+
+        <div class="feature-grid">
+            <!-- Luminosité -->
+            <div class="feature-card">
+                <img src="pages/projets/plantation_autonome/assets/images/Capteurs_lumiere.jpg" alt="Capteurs de luminosité" style="width: 100%; height: 150px; object-fit: cover; border-radius: var(--border-radius-md); margin-bottom: var(--spacing-md);">
+                <h3>Luminosité</h3>
+                <p>Photorésistances pour mesurer la lumière ambiante et ajuster l'éclairage.</p>
             </div>
-            <div class="card-body">
-                <div class="grid grid-2">
-                    <div>
-                        <p><strong>Status :</strong> <span class="badge badge-success">Actif</span></p>
-                        <p><strong>Version :</strong> 4.0</p>
-                        <p><strong>Catégorie :</strong> Automatisation / Jardinage</p>
-                    </div>
-                    <div>
-                        <p><strong>Technologies :</strong> Arduino, ESP32, Capteurs</p>
-                        <p><strong>Partenaire :</strong> <img src="pages/projets/plantation_autonome/assets/images/PASTICE logo.png" alt="PASTICE" style="height: 24px; vertical-align: middle;"></p>
-                    </div>
+
+            <!-- Arrosage -->
+            <div class="feature-card">
+                <img src="pages/projets/plantation_autonome/assets/images/Pompe_aquarium.jpg" alt="Pompe d'aquarium 5V" style="width: 100%; height: 150px; object-fit: cover; border-radius: var(--border-radius-md); margin-bottom: var(--spacing-md);">
+                <h3>Arrosage</h3>
+                <p>Pompe 5V (USB) pilotée selon l'humidité du sol et des créneaux horaires.</p>
+            </div>
+
+            <!-- Humidité sol -->
+            <div class="feature-card">
+                <img src="pages/projets/plantation_autonome/assets/images/Capteurs_humidite.jpg" alt="Capteurs d'humidité du sol" style="width: 100%; height: 150px; object-fit: cover; border-radius: var(--border-radius-md); margin-bottom: var(--spacing-md);">
+                <h3>Humidité (sol)</h3>
+                <p>Capteurs d'humidité du sol (capacitifs de préférence) pour piloter l'arrosage.</p>
+            </div>
+
+            <!-- Température & Humidité air -->
+            <div class="feature-card">
+                <img src="pages/projets/plantation_autonome/assets/images/TH11.jpg" alt="DHT11/DHT22" style="width: 100%; height: 150px; object-fit: cover; border-radius: var(--border-radius-md); margin-bottom: var(--spacing-md);">
+                <h3>Température & Humidité (air)</h3>
+                <p>Ex. DHT11/DHT22 pour suivre l'environnement.</p>
+            </div>
+
+            <!-- Heure -->
+            <div class="feature-card">
+                <img src="pages/projets/plantation_autonome/assets/images/RTC.jpg" alt="Module RTC" style="width: 100%; height: 150px; object-fit: cover; border-radius: var(--border-radius-md); margin-bottom: var(--spacing-md);">
+                <h3>Heure</h3>
+                <p>RTC pour créneaux d'arrosage et journalisation.</p>
+            </div>
+
+            <!-- Niveau d'eau -->
+            <div class="feature-card">
+                <img src="pages/projets/plantation_autonome/assets/images/floteur.jpg" alt="Capteur de niveau" style="width: 100%; height: 150px; object-fit: cover; border-radius: var(--border-radius-md); margin-bottom: var(--spacing-md);">
+                <h3>Niveau d'eau</h3>
+                <p>Flotteur ou capteurs de niveau pour sécuriser la pompe.</p>
+            </div>
+
+            <!-- Écran LCD -->
+            <div class="feature-card">
+                <img src="pages/projets/plantation_autonome/assets/images/LCD_16x2_I2C.jpg" alt="Écran LCD I2C" style="width: 100%; height: 150px; object-fit: cover; border-radius: var(--border-radius-md); margin-bottom: var(--spacing-md);">
+                <h3>Affichage LCD</h3>
+                <p>Écran LCD 16x2 I2C pour afficher les paramètres en temps réel.</p>
+            </div>
+        </div>
+
+        <!-- Illustration soleil -->
+        <div class="text-center" style="margin: var(--spacing-xl) 0;">
+            <img src="pages/projets/plantation_autonome/assets/images/M.Multimetre/M._MULTIMETRE_sous_le_soleille.png" alt="M. Multimètre sous le soleil" style="max-width: 250px; height: auto;">
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Liste des prototypes -->
+        <h2>Liste des prototypes</h2>
+        <p>Évolutions mécaniques, électroniques et logicielles du projet.</p>
+
+        <div class="gallery-with-captions">
+            <div class="gallery-item">
+                <img src="pages/projets/plantation_autonome/assets/images/Origine.jpg" alt="Version originale">
+                <div class="gallery-item-caption">Origine - Concept initial</div>
+            </div>
+            <div class="gallery-item">
+                <img src="pages/projets/plantation_autonome/assets/images/V1.jpg" alt="Version 1">
+                <div class="gallery-item-caption">V1 - Premier prototype</div>
+            </div>
+            <div class="gallery-item">
+                <img src="pages/projets/plantation_autonome/assets/images/V1_V2.jpg" alt="V1 à V2">
+                <div class="gallery-item-caption">V1 → V2 - Évolution</div>
+            </div>
+            <div class="gallery-item">
+                <img src="pages/projets/plantation_autonome/assets/images/V3.jpg" alt="Version 3">
+                <div class="gallery-item-caption">V3 - Amélioration</div>
+            </div>
+            <div class="gallery-item">
+                <img src="pages/projets/plantation_autonome/assets/images/basilicV4.jpg" alt="Version 4 Basilic">
+                <div class="gallery-item-caption">V4 - Basilic</div>
+            </div>
+            <div class="gallery-item">
+                <img src="pages/projets/plantation_autonome/assets/images/mentheV4.jpg" alt="Version 4 Menthe">
+                <div class="gallery-item-caption">V4 - Menthe</div>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Vidéo de démonstration -->
+        <h2>Vidéo de démonstration</h2>
+        <p>Démonstration du système de plantation autonome V3 en fonctionnement.</p>
+
+        <div class="video-container">
+            <video controls poster="pages/projets/plantation_autonome/assets/images/V3.jpg">
+                <source src="pages/projets/plantation_autonome/assets/videos/plantation autonome V3.mp4" type="video/mp4">
+                Votre navigateur ne supporte pas la lecture de vidéos.
+            </video>
+            <div class="video-caption">Plantation Autonome V3 - Démonstration</div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Modèle 3D -->
+        <h2>Modèle 3D</h2>
+        <p>Visualisez le modèle 3D du robot. Utilisez la souris pour le faire tourner et zoomer.</p>
+
+        <div class="model-viewer-container">
+            <model-viewer 
+                src="pages/projets/plantation_autonome/assets/models_3D/Robot_CdFR_blender.glb"
+                alt="Modèle 3D Robot"
+                camera-controls
+                auto-rotate
+                shadow-intensity="1"
+                touch-action="pan-y"
+                interaction-prompt="auto"
+                ar
+                style="width: 100%; height: 400px;">
+            </model-viewer>
+            <div class="model-viewer-instructions">🖱️ Cliquez et glissez pour tourner • Scrollez pour zoomer</div>
+            <div class="model-viewer-caption">Robot CdFR - Modèle Blender</div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Matériels utilisés -->
+        <h2>Matériels utilisés</h2>
+        <p>Capteurs, actionneurs, contrôleur, alimentation, etc.</p>
+
+        <div class="grid grid-2">
+            <div class="card">
+                <img src="pages/projets/plantation_autonome/assets/images/Controleur.jpg" alt="Contrôleur" style="width: 100%; height: 200px; object-fit: cover;">
+                <div class="card-body">
+                    <h4 class="card-title">Contrôleur</h4>
+                    <p>Carte de contrôle principale du système.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="pages/projets/plantation_autonome/assets/images/Controleur2.jpg" alt="Contrôleur détail" style="width: 100%; height: 200px; object-fit: cover;">
+                <div class="card-body">
+                    <h4 class="card-title">Vue détaillée</h4>
+                    <p>Détail du câblage et des connexions.</p>
                 </div>
             </div>
         </div>
 
-        <h2>Description</h2>
+        <div class="divider"></div>
 
-        <p>
-            La <strong>Plantation Autonome</strong> est un projet de système de culture automatisé permettant de gérer 
-            l'arrosage, l'éclairage et la surveillance des paramètres environnementaux de manière complètement autonome.
-        </p>
+        <!-- Mascotte M. Multimètre -->
+        <h2>M. Multimètre</h2>
+        <p>La mascotte du projet !</p>
 
-        <div class="card-alert info">
-            <div class="card-body">
-                <strong>🌱 Objectif :</strong> Créer un système capable de maintenir des conditions de croissance optimales 
-                pour les plantes sans intervention humaine quotidienne.
+        <div class="gallery-with-captions">
+            <div class="gallery-item">
+                <img src="pages/projets/plantation_autonome/assets/images/M.Multimetre/A_POSE.png" alt="M. Multimètre Pose A">
+                <div class="gallery-item-caption">Pose A</div>
+            </div>
+            <div class="gallery-item">
+                <img src="pages/projets/plantation_autonome/assets/images/M.Multimetre/A_POSE-1.png" alt="M. Multimètre Pose A-1">
+                <div class="gallery-item-caption">Pose A-1</div>
+            </div>
+            <div class="gallery-item">
+                <img src="pages/projets/plantation_autonome/assets/images/M.Multimetre/A_POSE-2.png" alt="M. Multimètre Pose A-2">
+                <div class="gallery-item-caption">Pose A-2</div>
+            </div>
+            <div class="gallery-item">
+                <img src="pages/projets/plantation_autonome/assets/images/M.Multimetre/A_POSE-3.png" alt="M. Multimètre Pose A-3">
+                <div class="gallery-item-caption">Pose A-3</div>
+            </div>
+            <div class="gallery-item">
+                <img src="pages/projets/plantation_autonome/assets/images/M.Multimetre/STOP.png" alt="M. Multimètre Stop">
+                <div class="gallery-item-caption">Stop</div>
+            </div>
+            <div class="gallery-item">
+                <img src="pages/projets/plantation_autonome/assets/images/M.Multimetre/Tableau.png" alt="M. Multimètre Tableau">
+                <div class="gallery-item-caption">Tableau</div>
             </div>
         </div>
 
-        <h2>Évolution du projet</h2>
-
-        <div class="image-gallery">
-            <img src="pages/projets/plantation_autonome/assets/images/Origine.jpg" alt="Version originale" title="Origine">
-            <img src="pages/projets/plantation_autonome/assets/images/V1.jpg" alt="Version 1" title="Version 1">
-            <img src="pages/projets/plantation_autonome/assets/images/V1_V2.jpg" alt="V1 vers V2" title="Transition V1-V2">
-            <img src="pages/projets/plantation_autonome/assets/images/V3.jpg" alt="Version 3" title="Version 3">
-            <img src="pages/projets/plantation_autonome/assets/images/basilicV4.jpg" alt="Version 4 - Basilic" title="Version 4 - Basilic">
-            <img src="pages/projets/plantation_autonome/assets/images/mentheV4.jpg" alt="Version 4 - Menthe" title="Version 4 - Menthe">
+        <!-- GIF animé -->
+        <div class="text-center" style="margin: var(--spacing-xl) 0;">
+            <img src="pages/projets/plantation_autonome/assets/images/M.Multimetre/M.Multimetre.gif" alt="M. Multimètre animé" style="max-width: 200px; height: auto; image-rendering: pixelated;">
         </div>
 
-        <h2>Composants utilisés</h2>
+        <div class="divider"></div>
 
-        <div class="feature-grid">
-            <div class="feature-card hover-lift">
-                <img src="pages/projets/plantation_autonome/assets/images/Controleur.jpg" alt="Contrôleur" style="width: 100%; height: 120px; object-fit: cover; border-radius: var(--border-radius-md); margin-bottom: var(--spacing-md);">
-                <h3>Contrôleur Principal</h3>
-                <p>Arduino / ESP32 pour la gestion centralisée de tous les capteurs et actionneurs.</p>
-            </div>
-
-            <div class="feature-card hover-lift">
-                <img src="pages/projets/plantation_autonome/assets/images/Capteurs_humidite.jpg" alt="Capteurs d'humidité" style="width: 100%; height: 120px; object-fit: cover; border-radius: var(--border-radius-md); margin-bottom: var(--spacing-md);">
-                <h3>Capteurs d'Humidité</h3>
-                <p>Mesure du taux d'humidité du sol pour déclencher l'arrosage automatique.</p>
-            </div>
-
-            <div class="feature-card hover-lift">
-                <img src="pages/projets/plantation_autonome/assets/images/Capteurs_lumiere.jpg" alt="Capteurs de lumière" style="width: 100%; height: 120px; object-fit: cover; border-radius: var(--border-radius-md); margin-bottom: var(--spacing-md);">
-                <h3>Capteurs de Lumière</h3>
-                <p>Détection de la luminosité pour adapter l'éclairage artificiel.</p>
-            </div>
-
-            <div class="feature-card hover-lift">
-                <img src="pages/projets/plantation_autonome/assets/images/TH11.jpg" alt="Capteur DHT11" style="width: 100%; height: 120px; object-fit: cover; border-radius: var(--border-radius-md); margin-bottom: var(--spacing-md);">
-                <h3>Température & Humidité</h3>
-                <p>DHT11/DHT22 pour surveiller les conditions ambiantes.</p>
-            </div>
-
-            <div class="feature-card hover-lift">
-                <img src="pages/projets/plantation_autonome/assets/images/LCD_16x2_I2C.jpg" alt="Écran LCD" style="width: 100%; height: 120px; object-fit: cover; border-radius: var(--border-radius-md); margin-bottom: var(--spacing-md);">
-                <h3>Écran LCD I2C</h3>
-                <p>Affichage local des paramètres et de l'état du système.</p>
-            </div>
-
-            <div class="feature-card hover-lift">
-                <img src="pages/projets/plantation_autonome/assets/images/RTC.jpg" alt="Module RTC" style="width: 100%; height: 120px; object-fit: cover; border-radius: var(--border-radius-md); margin-bottom: var(--spacing-md);">
-                <h3>Module RTC</h3>
-                <p>Horloge temps réel pour programmer les cycles jour/nuit.</p>
-            </div>
-
-            <div class="feature-card hover-lift">
-                <img src="pages/projets/plantation_autonome/assets/images/Pompe_aquarium.jpg" alt="Pompe d'aquarium" style="width: 100%; height: 120px; object-fit: cover; border-radius: var(--border-radius-md); margin-bottom: var(--spacing-md);">
-                <h3>Pompe d'Arrosage</h3>
-                <p>Pompe submersible pour l'irrigation automatique.</p>
-            </div>
-
-            <div class="feature-card hover-lift">
-                <img src="pages/projets/plantation_autonome/assets/images/floteur.jpg" alt="Flotteur" style="width: 100%; height: 120px; object-fit: cover; border-radius: var(--border-radius-md); margin-bottom: var(--spacing-md);">
-                <h3>Capteur de Niveau</h3>
-                <p>Flotteur pour détecter le niveau d'eau dans le réservoir.</p>
-            </div>
+        <!-- Partenaire -->
+        <h2>Partenaire</h2>
+        <div class="text-center">
+            <img src="pages/projets/plantation_autonome/assets/images/PASTICE logo.png" alt="PASTICE" style="max-width: 200px; height: auto;">
         </div>
-
-        <h2>Architecture du système</h2>
-
-        <div class="card">
-            <div class="card-body">
-                <pre><code>Plantation Autonome V4
-├── Contrôleur Principal (ESP32)
-│   ├── Capteurs
-│   │   ├── Humidité sol (x2)
-│   │   ├── Luminosité (LDR)
-│   │   ├── Température/Humidité (DHT22)
-│   │   └── Niveau d'eau (flotteur)
-│   │
-│   ├── Actionneurs
-│   │   ├── Pompe d'arrosage
-│   │   ├── Éclairage LED
-│   │   └── Ventilation
-│   │
-│   └── Interface
-│       ├── Écran LCD 16x2 I2C
-│       └── Module RTC DS3231
-│
-└── Alimentation
-    └── 12V DC avec régulation 5V/3.3V</code></pre>
-            </div>
-        </div>
-
-        <h2>Détails techniques</h2>
-
-        <img src="pages/projets/plantation_autonome/assets/images/Controleur2.jpg" alt="Vue détaillée du contrôleur" style="width: 100%; max-width: 600px; border-radius: var(--border-radius-lg); margin: var(--spacing-lg) auto; display: block;">
 
         <div class="divider"></div>
 

@@ -135,3 +135,13 @@
     background: linear-gradient(135deg, #c5e8eb 0%, #d0f5f5 100%);
     color: #1a2424;
 }
+
+[data-theme="light"] .btn-secondary {
+    background: #fdfcfa;
+    color: var(--text-primary);
+    border-color: var(--color-secondary-dark);
+}
+
+[data-theme="light"] .btn-secondary:hover:not(:disabled) {
+    background: #ece9e4;
+}

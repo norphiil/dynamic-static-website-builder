@@ -139,8 +139,14 @@ const ContentLoader = {
         const images = this.container.querySelectorAll('img[src]');
         images.forEach(img => {
             const src = img.getAttribute('src');
-            if (src && !src.startsWith('http') && !src.startsWith('/')) {
-                img.src = basePath + PathUtils.join(pageDir, src);
+            if (src && !src.startsWith('http') && !src.startsWith('/') && !src.startsWith('data:')) {
+                // Si le chemin commence par 'src/' ou 'pages/', c'est un chemin depuis la racine du site
+                if (src.startsWith('src/') || src.startsWith('pages/')) {
+                    img.src = basePath + src;
+                } else {
+                    // Sinon c'est un chemin relatif au dossier de la page
+                    img.src = basePath + PathUtils.join(pageDir, src);
+                }
             }
         });
 
