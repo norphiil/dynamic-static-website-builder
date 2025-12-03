@@ -57,7 +57,7 @@ function Get-NavigationTree {
         [string]$RelativePath = ""
     )
     
-    $items = @()
+    [System.Collections.ArrayList]$items = @()
     
     $children = Get-ChildItem -Path $Path -ErrorAction SilentlyContinue | Sort-Object { 
         $isDir = $_.PSIsContainer
@@ -80,28 +80,28 @@ function Get-NavigationTree {
             $subItems = Get-NavigationTree -Path $child.FullName -RelativePath $childRelativePath
             
             if ($subItems.Count -gt 0) {
-                $folderItem = @{
+                $folderItem = [ordered]@{
                     name = $child.Name
                     displayName = ConvertTo-DisplayName $child.Name
                     path = $fullRelativePath
                     type = "folder"
-                    children = $subItems
+                    children = @($subItems)
                 }
-                $items += $folderItem
+                [void]$items.Add($folderItem)
             }
         }
         elseif ($child.Extension -in @(".html", ".htm")) {
-            $fileItem = @{
+            $fileItem = [ordered]@{
                 name = $child.Name
                 displayName = ConvertTo-DisplayName $child.Name
                 path = $fullRelativePath
                 type = "file"
             }
-            $items += $fileItem
+            [void]$items.Add($fileItem)
         }
     }
     
-    return $items
+    return ,$items.ToArray()
 }
 
 # === MAIN ===
@@ -139,12 +139,12 @@ Count-Items $navigationTree
 
 Write-Host "[INFO] Trouve: $fileCount pages, $folderCount dossiers" -ForegroundColor Gray
 
-$navigationData = @{
+$navigationData = [ordered]@{
     generated = (Get-Date -Format "yyyy-MM-dd HH:mm:ss")
-    children = $navigationTree
+    children = @($navigationTree)
 }
 
-$jsonContent = $navigationData | ConvertTo-Json -Depth 10
+$jsonContent = $navigationData | ConvertTo-Json -Depth 10 -Compress:$false
 
 $jsonContent | Out-File -FilePath $OutputFile -Encoding UTF8
 

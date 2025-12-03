@@ -21,35 +21,28 @@ const TreeBuilder = {
     },
 
     /**
-     * Charge la structure depuis navigation.json ou NavigationData
+     * Charge la structure depuis navigation.json
      */
     async loadStructure() {
-        // Essaie d'abord de charger navigation.json (généré par le script)
         try {
             const basePath = PathUtils.getBasePath();
             const url = basePath + 'navigation.json';
-            console.log('Trying to load:', url);
+            console.log('Loading navigation from:', url);
             
             const response = await fetch(url, { cache: 'no-cache' });
             
             if (response.ok) {
                 const data = await response.json();
-                console.log('Navigation loaded from JSON file');
+                console.log('Navigation loaded successfully');
                 return this.buildTreeFromJson(data);
+            } else {
+                console.warn('navigation.json not found');
+                return this.getFallbackStructure();
             }
         } catch (error) {
-            console.log('Could not load navigation.json:', error.message);
+            console.error('Error loading navigation:', error.message);
+            return this.getFallbackStructure();
         }
-        
-        // Fallback: utilise NavigationData si disponible
-        if (typeof NavigationData !== 'undefined' && NavigationData.children) {
-            console.log('Using NavigationData fallback');
-            return this.buildTreeFromJson(NavigationData);
-        }
-        
-        // Dernier recours: structure par défaut
-        console.warn('Using default fallback structure');
-        return this.getFallbackStructure();
     },
 
     /**
@@ -58,17 +51,20 @@ const TreeBuilder = {
     buildTreeFromJson(data, level = 0) {
         const nodes = [];
         
+        let items = [];
+        
         if (Array.isArray(data)) {
-            data.forEach(item => {
-                const node = this.processItem(item, level);
-                if (node) nodes.push(node);
-            });
-        } else if (data.children) {
-            data.children.forEach(item => {
-                const node = this.processItem(item, level);
-                if (node) nodes.push(node);
-            });
+            items = data;
+        } else if (data && data.children) {
+            items = Array.isArray(data.children) ? data.children : [data.children];
         }
+        
+        items.forEach(item => {
+            if (item) {
+                const node = this.processItem(item, level);
+                if (node) nodes.push(node);
+            }
+        });
         
         return this.sortNodes(nodes);
     },
@@ -101,8 +97,9 @@ const TreeBuilder = {
         }
 
         // Traite les enfants récursivement
-        if (item.children && Array.isArray(item.children)) {
-            node.children = this.buildTreeFromJson(item.children, level + 1);
+        if (item.children) {
+            const childrenArray = Array.isArray(item.children) ? item.children : [item.children];
+            node.children = this.buildTreeFromJson(childrenArray, level + 1);
         }
 
         return node;

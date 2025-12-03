@@ -1,74 +1,78 @@
 ﻿{
-    "generated":  "2025-12-03 11:01:43",
+    "generated":  "2025-12-03 11:17:07",
     "children":  [
                      {
-                         "path":  "pages/accueil",
                          "name":  "accueil",
-                         "children":  {
-                                          "path":  "pages/accueil/index.html",
-                                          "name":  "index.html",
-                                          "displayName":  "Index",
-                                          "type":  "file"
-                                      },
                          "displayName":  "Accueil",
-                         "type":  "folder"
-                     },
-                     {
-                         "path":  "pages/documentation",
-                         "name":  "documentation",
+                         "path":  "pages/accueil",
+                         "type":  "folder",
                          "children":  [
                                           {
-                                              "path":  "pages/documentation/ajouter-pages.html",
-                                              "name":  "ajouter-pages.html",
-                                              "displayName":  "Ajouter Pages",
-                                              "type":  "file"
-                                          },
-                                          {
-                                              "path":  "pages/documentation/demarrage.html",
-                                              "name":  "demarrage.html",
-                                              "displayName":  "Demarrage",
-                                              "type":  "file"
-                                          },
-                                          {
-                                              "path":  "pages/documentation/structure.html",
-                                              "name":  "structure.html",
-                                              "displayName":  "Structure",
+                                              "name":  "index.html",
+                                              "displayName":  "Index",
+                                              "path":  "pages/accueil/index.html",
                                               "type":  "file"
                                           }
-                                      ],
+                                      ]
+                     },
+                     {
+                         "name":  "documentation",
                          "displayName":  "Documentation",
-                         "type":  "folder"
+                         "path":  "pages/documentation",
+                         "type":  "folder",
+                         "children":  [
+                                          {
+                                              "name":  "ajouter-pages.html",
+                                              "displayName":  "Ajouter Pages",
+                                              "path":  "pages/documentation/ajouter-pages.html",
+                                              "type":  "file"
+                                          },
+                                          {
+                                              "name":  "demarrage.html",
+                                              "displayName":  "Demarrage",
+                                              "path":  "pages/documentation/demarrage.html",
+                                              "type":  "file"
+                                          },
+                                          {
+                                              "name":  "structure.html",
+                                              "displayName":  "Structure",
+                                              "path":  "pages/documentation/structure.html",
+                                              "type":  "file"
+                                          }
+                                      ]
                      },
                      {
-                         "path":  "pages/projets",
                          "name":  "projets",
-                         "children":  {
-                                          "path":  "pages/projets/projet-exemple",
-                                          "name":  "projet-exemple",
-                                          "children":  [
-                                                           {
-                                                               "path":  "pages/projets/projet-exemple/index.html",
-                                                               "name":  "index.html",
-                                                               "displayName":  "Index",
-                                                               "type":  "file"
-                                                           },
-                                                           {
-                                                               "path":  "pages/projets/projet-exemple/details.html",
-                                                               "name":  "details.html",
-                                                               "displayName":  "Details",
-                                                               "type":  "file"
-                                                           }
-                                                       ],
-                                          "displayName":  "Projet Exemple",
-                                          "type":  "folder"
-                                      },
                          "displayName":  "Projets",
-                         "type":  "folder"
+                         "path":  "pages/projets",
+                         "type":  "folder",
+                         "children":  [
+                                          {
+                                              "name":  "projet-exemple",
+                                              "displayName":  "Projet Exemple",
+                                              "path":  "pages/projets/projet-exemple",
+                                              "type":  "folder",
+                                              "children":  [
+                                                               {
+                                                                   "name":  "index.html",
+                                                                   "displayName":  "Index",
+                                                                   "path":  "pages/projets/projet-exemple/index.html",
+                                                                   "type":  "file"
+                                                               },
+                                                               {
+                                                                   "name":  "details.html",
+                                                                   "displayName":  "Details",
+                                                                   "path":  "pages/projets/projet-exemple/details.html",
+                                                                   "type":  "file"
+                                                               }
+                                                           ]
+                                          }
+                                      ]
                      },
                      {
-                         "path":  "pages/a-propos.html",
                          "name":  "a-propos.html",
                          "displayName":  "A Propos",
+                         "path":  "pages/a-propos.html",
                          "type":  "file"
                      }
                  ]
