@@ -24,7 +24,9 @@ const ThemeManager = {
     elements: {
         button: null,
         dropdown: null,
-        options: null
+        options: null,
+        label: null,
+        icon: null
     },
 
     /**
@@ -48,6 +50,8 @@ const ThemeManager = {
         this.elements.button = document.querySelector('.theme-btn');
         this.elements.dropdown = document.querySelector('.theme-dropdown');
         this.elements.options = document.querySelectorAll('.theme-option');
+        this.elements.label = document.getElementById('theme-label');
+        this.elements.icon = document.getElementById('theme-icon');
 
         if (!this.elements.button || !this.elements.dropdown) {
             return;
@@ -81,8 +85,9 @@ const ThemeManager = {
             }
         });
 
-        // Met à jour l'état actif
+        // Met à jour l'état actif et le label
         this.updateActiveOption();
+        this.updateButtonLabel();
     },
 
     /**
@@ -114,6 +119,25 @@ const ThemeManager = {
     },
 
     /**
+     * Met à jour le label et l'icône du bouton
+     */
+    updateButtonLabel() {
+        const icons = {
+            dark: '☾',
+            light: '☀',
+            cyan: '❄'
+        };
+
+        if (this.elements.label) {
+            this.elements.label.textContent = this.themes[this.currentTheme];
+        }
+        
+        if (this.elements.icon) {
+            this.elements.icon.textContent = icons[this.currentTheme] || '☾';
+        }
+    },
+
+    /**
      * Cycle entre les thèmes
      */
     toggle() {
@@ -136,6 +160,7 @@ const ThemeManager = {
         this.applyTheme(theme);
         this.saveTheme(theme);
         this.updateActiveOption();
+        this.updateButtonLabel();
     },
 
     /**
