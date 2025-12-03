@@ -106,23 +106,13 @@ const TreeBuilder = {
     },
 
     /**
-     * Trie les nœuds (dossiers d'abord, puis alphabétiquement)
+     * Trie les nœuds (garde l'ordre du JSON qui est déjà trié par le script PowerShell)
+     * Fichiers en premier, puis dossiers
      */
     sortNodes(nodes) {
-        return nodes.sort((a, b) => {
-            // Les dossiers en premier
-            if (a.type === 'folder' && b.type !== 'folder') return -1;
-            if (a.type !== 'folder' && b.type === 'folder') return 1;
-            
-            // Index files en premier dans les fichiers
-            const aIsIndex = SiteConfig.priorityFiles.includes(a.name);
-            const bIsIndex = SiteConfig.priorityFiles.includes(b.name);
-            if (aIsIndex && !bIsIndex) return -1;
-            if (!aIsIndex && bIsIndex) return 1;
-            
-            // Puis alphabétiquement
-            return a.displayName.localeCompare(b.displayName);
-        });
+        // L'ordre est déjà défini dans navigation.json par le script PowerShell
+        // On ne re-trie pas pour respecter cet ordre (fichiers avant dossiers)
+        return nodes;
     },
 
     /**
