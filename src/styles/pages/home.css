@@ -61,12 +61,19 @@
    ========================================= */
 
 .home-welcome {
-    text-align: center;
     padding: 2rem;
 }
 
+.home-welcome-content {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
 .home-mascot {
-    margin-bottom: 1.5rem;
+    flex-shrink: 0;
 }
 
 .home-mascot img {
@@ -76,8 +83,7 @@
 }
 
 .home-intro {
-    max-width: 600px;
-    margin: 0 auto;
+    flex: 1;
 }
 
 .home-intro .lead {
@@ -90,6 +96,7 @@
     color: var(--text-secondary);
     font-size: 1.1rem;
     line-height: 1.8;
+    margin: 0;
 }
 
 .home-intro strong {
@@ -283,6 +290,11 @@
 
     .home-banner-title {
         font-size: 1.8rem;
+    }
+
+    .home-welcome-content {
+        flex-direction: column;
+        text-align: center;
     }
 
     .home-mascot img {
